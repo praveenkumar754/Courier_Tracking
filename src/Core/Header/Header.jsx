@@ -22,7 +22,7 @@ export default function Header() {
                 <Link to={'/'}  className='text-black text-xl hover:text-indigo-500 font-bold'>Home</Link>
                 <Link to={'/about'}  className='text-black text-xl hover:text-indigo-500 font-bold'>About us</Link>
                 <Link to={'/blog'}  className='text-black text-xl hover:text-indigo-500 font-bold'>Services</Link>
-                <Link to={'/Tracking'}  className='text-black text-xl hover:text-indigo-500 font-bold'>Tracking</Link>
+                <Link to={'/Tracking'}  className='text-black text-xl hover:text-indigo-500 font-bold'>Contact us</Link>
             </div>
             <div className='flex gap-8 md:hidden'>
                 <div className=' hover:text-red-500'>
@@ -39,7 +39,13 @@ export default function Header() {
         </div>
         
         </nav>
-    
+       
+
+
+
+
+
+
     </header>
   )
 }
