@@ -19,7 +19,7 @@ export default function Header() {
           {/* Adjust logo size for different screen sizes */}
           <img
             className="p-1 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px]"
-            src="src\assets\pngegg.png"
+            src="/assets/pngegg.png"
             alt="Logo"
           />
         </div>
