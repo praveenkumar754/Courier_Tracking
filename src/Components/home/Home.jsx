@@ -43,7 +43,7 @@ const HomePage = () => {
   return (
     <div className="relative min-h-[950px] flex items-center justify-center bg-gray-100 py-12 sm:py-32 px-4 sm:px-8 lg:px-20 flex-col">
       <img
-        src="src/assets/courier.jpg"
+        src="/assets/courier.jpg"
         alt="Courier Service"
         className="absolute inset-0 object-cover w-full h-[950px] z-0"
       />
