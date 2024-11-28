@@ -17,7 +17,7 @@ export default function Blog() {
         <div className='flex flex-wrap justify-center gap-8 py-16'>
           {/* Express Delivery Card */}
           <div className='max-w-sm rounded overflow-hidden shadow-lg transition ease-in-out delay-150 bg-white hover:-translate-y-1 hover:scale-110 duration-300'>
-            <img src="src/assets/cards1.jpg" alt="Express Delivery" className='w-full'/>
+            <img src="assets/cards1.jpg" alt="Express Delivery" className='w-full'/>
             <div className='px-6 py-4'>
               <div className='font-bold text-xl mb-2 text-red-600'>
                 <h4>Express Delivery</h4>
@@ -35,7 +35,7 @@ export default function Blog() {
 
           {/* Standard Delivery Card */}
           <div className='max-w-sm rounded overflow-hidden shadow-lg transition ease-in-out delay-150 bg-white hover:-translate-y-1 hover:scale-110 duration-300'>
-            <img src="src/assets/cards2.jpg" alt="Standard Delivery" className='w-full'/>
+            <img src="assets/cards2.jpg" alt="Standard Delivery" className='w-full'/>
             <div className='px-6 py-4'>
               <div className='font-bold text-xl mb-2 text-red-600'>
                 <h4>Standard Delivery</h4>
@@ -53,7 +53,7 @@ export default function Blog() {
 
           {/* Corporate Bulk Delivery Card */}
           <div className='max-w-sm rounded overflow-hidden shadow-lg transition ease-in-out delay-150 bg-white hover:-translate-y-1 hover:scale-110 duration-300'>
-            <img src="src/assets/cards3.webp" alt="Corporate Bulk Delivery" className='w-full'/>
+            <img src="assets/cards3.webp" alt="Corporate Bulk Delivery" className='w-full'/>
             <div className='px-6 py-4'>
               <div className='font-bold text-xl mb-2 text-red-600'>
                 <h4>Corporate Bulk Delivery</h4>
