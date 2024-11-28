@@ -16,7 +16,7 @@ export default function About() {
           <div className="w-full flex justify-center md:justify-start">
             <img
               className="w-full max-w-[600px] rounded-lg shadow-lg"
-              src="src/assets/about.jpg"
+              src="assets/about.jpg"
               alt="About Us"
             />
           </div>
