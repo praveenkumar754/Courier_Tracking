@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 
 const HomePage = () => {
@@ -28,9 +26,6 @@ const HomePage = () => {
       localStorage.setItem('trackingCode', trackingCode);
       console.log('Tracking Code:', trackingCode);
 
-     
-      setFormData({ trackingCode: '' });
-
       let trackingCodes = JSON.parse(localStorage.getItem('trackingCodes')) || [];
     
       // Add the new tracking code to the array
@@ -46,27 +41,29 @@ const HomePage = () => {
   };
 
   return (
-    <div className="relative min-h-[950px] flex items-center justify-center bg-gray-100 md:grid md:grid-rows-1 py-52 px-80">
+    <div className="relative min-h-[950px] flex items-center justify-center bg-gray-100 py-12 sm:py-32 px-4 sm:px-8 lg:px-20 flex-col">
       <img
         src="src/assets/courier.jpg"
         alt="Courier Service"
         className="absolute inset-0 object-cover w-full h-[950px] z-0"
       />
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
           Fast & Reliable Courier Service
         </h1>
-        <p className="mt-4 text-lg text-white sm:text-xl lg:text-2xl max-w-2xl mx-auto">
+        <p className="mt-4 text-lg sm:text-xl lg:text-2xl text-white max-w-2xl mx-auto">
           We deliver your parcels safely and on time, every time.
         </p>
       </div>
       <div className="absolute inset-0 bg-black opacity-50 z-1 "></div>
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 bg-white w-[400px] h-[200px] grid justify-between rounded-md ">
+
+      {/* Form Container - Responsive Layout */}
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 bg-white w-full sm:w-[350px] md:w-[400px] lg:w-[450px] h-auto grid justify-between rounded-md shadow-lg p-6 mx-auto mt-8">
         <form onSubmit={register}>
           <div>
-            <h1 className="text-xl font-bold text-center py-5">Enter Tracking Code</h1>
+            <h1 className="text-xl sm:text-2xl font-bold text-center py-5">Enter Tracking Code</h1>
           </div>
-          <div className="text-xl font-bold text-center px-14 ">
+          <div className="text-xl font-bold text-center px-4 sm:px-6">
             <input
               type="text"
               name="trackingCode"
@@ -80,34 +77,15 @@ const HomePage = () => {
           {error && (
             <p className="text-red-500 text-sm mt-2">{error}</p>
           )}
-          <div>
-            <button className="bg-blue-500 text-white w-[200px] h-9 rounded-md mt-4">Submit</button>
+          <div className="mt-4">
+            <button className="bg-blue-500 text-white w-full sm:w-[200px] h-10 rounded-md">
+              Submit
+            </button>
           </div>
         </form>
       </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   );
 };
-
-
-
-
-
-
-
 
 export default HomePage;
