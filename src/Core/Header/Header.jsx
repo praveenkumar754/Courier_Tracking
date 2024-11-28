@@ -12,17 +12,24 @@ export default function Header() {
 
   return (
     <header>
-      <nav className='flex w-full px-4 py-10 mx-auto'>
-        <div className='flex justify-between w-full items-center'>
-          <div className='flex items-center'>
-            <div>
-              <img className='p-1 w-[100px] h-[100px]' src="C:\Users\office\Documents\Courier Project\courier\src\assets\about.jpg" alt="Logo" />
-            </div>
-            <div>
-              <h1 className='text-black text-5xl italic p-0 md:text-3xl font-bold'>Express Delivery</h1>
-            </div>
-          </div>
-
+    <nav className="flex w-full px-4 py-10 mx-auto">
+    <div className="flex justify-between w-full items-center">
+      <div className="flex items-center">
+        <div>
+          {/* Adjust logo size for different screen sizes */}
+          <img
+            className="p-1 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px]"
+            src="src\assets\pngegg.png"
+            alt="Logo"
+          />
+        </div>
+        <div>
+          {/* Adjust text size for different screen sizes */}
+          <h1 className="text-black text-3xl sm:text-4xl md:text-5xl italic p-0 font-bold">
+            Express Delivery
+          </h1>
+        </div>
+      </div>
           {/* Desktop and larger screen links */}
           <div className='flex gap-9 hidden md:flex'>
             <Link to={'/'} className='text-black text-xl hover:text-indigo-500 font-bold'>Home</Link>
