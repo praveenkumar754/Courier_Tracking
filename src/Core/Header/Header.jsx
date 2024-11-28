@@ -16,7 +16,7 @@ export default function Header() {
         <div className='flex justify-between w-full items-center'>
           <div className='flex items-center'>
             <div>
-              <img className='p-1 w-[100px] h-[100px]' src="src/assets/pngegg.png" alt="Logo" />
+              <img className='p-1 w-[100px] h-[100px]' src="C:\Users\office\Documents\Courier Project\courier\src\assets\about.jpg" alt="Logo" />
             </div>
             <div>
               <h1 className='text-black text-5xl italic p-0 md:text-3xl font-bold'>Express Delivery</h1>
