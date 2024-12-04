@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { apiAddtask } from '../../service/authentication/apitask';
 
 const HomePage = () => {
-  const [formData, setFormData] = useState({ trackingCode: '' });
+  const [formData, setFormData] = useState({ TrackingID: '' });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false); // For loading state
 
   const handleChange = (event) => {
     setFormData({
@@ -12,31 +14,24 @@ const HomePage = () => {
     setError('');  
   };
 
-  const register = (event) => {
+  const register = async (event) => {
     event.preventDefault();
-    const trackingCode = formData.trackingCode;
+    const TrackingID = formData.TrackingID;
 
-    const isValid = /^[a-zA-Z0-9]{14}$/.test(trackingCode) && /[a-zA-Z].*[a-zA-Z]/.test(trackingCode);
+    // Call the API to save the TrackingID
+    setLoading(true); // Show loading state
 
-    if (!isValid) {
-      setError('Please enter a valid ID');
-    } else {
-      setError('');
-     
-      localStorage.setItem('trackingCode', trackingCode);
-      console.log('Tracking Code:', trackingCode);
+    try {
+      // Call apiAddtask to save the TrackingID
+      await apiAddtask(TrackingID); // Assuming it saves successfully
 
-      let trackingCodes = JSON.parse(localStorage.getItem('trackingCodes')) || [];
-    
-      // Add the new tracking code to the array
-      trackingCodes.push(trackingCode);
-      
-      // Store the updated array in localStorage
-      localStorage.setItem('trackingCodes', JSON.stringify(trackingCodes));
-  
-      console.log('Tracking Codes:', trackingCodes);
-  
-      setFormData({ trackingCode: '' });
+      // Reset form after successful save
+      setFormData({ TrackingID: '' });
+      setError(''); // Clear any previous errors
+    } catch (error) {
+      setError('An error occurred while saving the TrackingID'); // Error message in case of failure
+    } finally {
+      setLoading(false); // Hide loading state after the operation
     }
   };
 
@@ -57,7 +52,7 @@ const HomePage = () => {
       </div>
       <div className="absolute inset-0 bg-black opacity-50 z-1 "></div>
 
-      {/* Form Container - Responsive Layout */}
+      {/* Form Container */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 bg-white w-full sm:w-[350px] md:w-[400px] lg:w-[450px] h-auto grid justify-between rounded-md shadow-lg p-6 mx-auto mt-8">
         <form onSubmit={register}>
           <div>
@@ -66,10 +61,10 @@ const HomePage = () => {
           <div className="text-xl font-bold text-center px-4 sm:px-6">
             <input
               type="text"
-              name="trackingCode"
+              name="TrackingID"
               placeholder="Enter Tracking Code"
               onChange={handleChange}
-              value={formData.trackingCode}
+              value={formData.TrackingID}
               required
               className="w-full p-2 border rounded-md"
             />
@@ -78,8 +73,12 @@ const HomePage = () => {
             <p className="text-red-500 text-sm mt-2">{error}</p>
           )}
           <div className="mt-4">
-            <button className="bg-blue-500 text-white w-full sm:w-[200px] h-10 rounded-md">
-              Submit
+            <button 
+              type="submit" 
+              className="bg-blue-500 text-white w-full sm:w-[200px] h-10 rounded-md"
+              disabled={loading} // Disable button while loading
+            >
+              {loading ? 'Saving...' : 'Submit'}
             </button>
           </div>
         </form>
